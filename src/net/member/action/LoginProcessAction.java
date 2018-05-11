@@ -27,8 +27,8 @@ public class LoginProcessAction implements Action{
 			HttpSession session = request.getSession();
 			//로그인 성공
 			session.setAttribute("id", id);
-			forward.setRedirect(false);
-			forward.setPath("./member/main.jsp");
+			forward.setRedirect(true);
+			forward.setPath("./BoardList.bo");
 			return forward;
 		} else {
 			String message = "";

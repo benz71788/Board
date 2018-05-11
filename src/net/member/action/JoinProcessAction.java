@@ -38,7 +38,6 @@ public class JoinProcessAction implements Action{
 		if(isId == -1) {
 			out.println("<script>");
 			out.println("alert('중복된 아이디가 없습니다.');");
-			out.println("history.back();");
 			out.println("</script>");
 		}
 		

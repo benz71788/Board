@@ -1,7 +1,7 @@
-@CHARSET "EUC-KR";
+@CHARSET "UTF-8";
 table{margin:0 auto; width:800px}
 th{height:30px;background:#f1f1f1;}
-td{font-family:µ¸À½; font-size:14; height:36px;}
+td{font-family:ë‹ìŒ; font-size:14; height:36px;}
 td:nth-child(2n+1), .center{text-align:center}	  
 .h30{height:30px}
 .lime{background-color: #f1f1f1;} 

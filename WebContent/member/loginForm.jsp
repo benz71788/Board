@@ -6,6 +6,7 @@
 <head>
 <title>Insert title here</title>
 <script src="/JspProject/js/jquery-3.3.1.js"></script>
+<link href="css/login.css" rel="stylesheet">
 <script>
 	
 	$(document).ready(function(){

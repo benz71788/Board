@@ -12,5 +12,7 @@
 	<c:if test="${id=='admin'}">
 		<a href="member_list.net">관리자모드 접속(회원 목록 보기)</a>
 	</c:if>
+	<br><br>
+		<a href="BoardList.bo">게시판 목록으로 가기</a>
 </body>
 </html>

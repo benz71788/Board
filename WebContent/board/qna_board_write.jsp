@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/board/header.jsp" %>
+<link href="css/form.css" rel="stylesheet">
 <form action="./BoardAddAction.bo" method="post"
 	enctype="multipart/form-data" name="boardform">
 	<table>
@@ -40,7 +41,7 @@
 		<tr class="center">
 			<td colspan="2" class="h30 lime">
 				<input type=submit value="등록">
-				<input type=reset value="취소">
+				<input type=reset value="취소" onClick="history.go(-1)">
 			</td>
 		</tr>
 	</table>

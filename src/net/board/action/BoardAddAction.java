@@ -15,7 +15,6 @@ public class BoardAddAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
-		
 		BoardDAO boardDAO = new BoardDAO();
 		BoardBean boardData = new BoardBean();
 		ActionForward forward = new ActionForward();
@@ -34,6 +33,7 @@ public class BoardAddAction implements Action{
 		 *  realFolder = request.getSession().getServletContext().getRealPath(saveFolder);
 		 */
 		System.out.println("realFolder : " + realFolder);
+		
 		boolean result = false;
 		try {
 			MultipartRequest multi = null;
@@ -54,8 +54,20 @@ public class BoardAddAction implements Action{
 			//글 등록 폼에서 입력한 정보가 저장되어 있는 boardData객체를 전달합니다.
 			result = boardDAO.boardInsert(boardData);
 			
-		} catch(Exception e) {
+			//글 등록에 실패할 경우 null을 반환합니다.
+			if(result == false) {
+				System.out.println("게시판 등록 실패");
+				return null;
+			}
+			System.out.println("게시판 등록 완료");
 			
+			//글 등록이 완료되면 글 목록을 단순히 보여주기만 할 것이므로
+			//Redirect여부를 true로 설정합니다.
+			forward.setRedirect(true);
+			//이동할 경로를 지정합니다.
+			forward.setPath("./BoardList.bo");
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 		return forward;
 	}
