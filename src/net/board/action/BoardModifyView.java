@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.board.db.BoardBean;
-import net.board.db.BoardDAO;
+import net.board.db.BoardDAO_seq;
 
 public class BoardModifyView implements Action{
 
@@ -14,7 +14,7 @@ public class BoardModifyView implements Action{
 		ActionForward forward = new ActionForward();
 		request.setCharacterEncoding("UTF-8");
 		
-		BoardDAO boardDAO = new BoardDAO();
+		BoardDAO_seq boardDAO = new BoardDAO_seq();
 		BoardBean boardData = new BoardBean();
 
 		//파라미터로 전달받은 수정할 글 번호를 num변수에 저장합니다.

@@ -4,14 +4,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.board.db.BoardBean;
-import net.board.db.BoardDAO;
+import net.board.db.BoardDAO_seq;
 
 public class BoardDetailAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
-		BoardDAO boardDAO = new BoardDAO();
+		BoardDAO_seq boardDAO = new BoardDAO_seq();
 		BoardBean boardDetail = new BoardBean();
 		
 		request.setCharacterEncoding("UTF-8");

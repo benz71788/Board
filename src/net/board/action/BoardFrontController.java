@@ -109,6 +109,13 @@ public class BoardFrontController extends HttpServlet {
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
+		} else if(command.equals("/BoardFileDown.bo")) {
+			action = new BoardFileDownAction();
+			try {
+				forward = action.execute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		if(forward != null) {

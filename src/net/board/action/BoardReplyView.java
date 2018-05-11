@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.board.db.BoardBean;
-import net.board.db.BoardDAO;
+import net.board.db.BoardDAO_seq;
 
 public class BoardReplyView  implements Action{
 
@@ -13,7 +13,7 @@ public class BoardReplyView  implements Action{
 		// TODO Auto-generated method stub
 		ActionForward forward = new ActionForward();
 		
-		BoardDAO boardDAO = new BoardDAO();
+		BoardDAO_seq boardDAO = new BoardDAO_seq();
 		BoardBean boardData = new BoardBean();
 		
 		//파라미터로 전달받은 답변할 글 번호를 num변수에 저장합니다.

@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.board.db.BoardDAO;
+import net.board.db.BoardDAO_seq;
 
 public class BoardDeleteAction implements Action{
 
@@ -17,7 +17,7 @@ public class BoardDeleteAction implements Action{
 		
 		int num = Integer.parseInt(request.getParameter("num"));
 		
-		BoardDAO boardDAO = new BoardDAO();
+		BoardDAO_seq boardDAO = new BoardDAO_seq();
 		
 		//글 삭제 명령을 요청한 사용자가 글을 작성한 사용자인지 판단하기 위해
 		//입력한 비밀번호와 저장된 비밀번호를 비교하여 일치하면 삭제합니다.

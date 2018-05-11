@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.board.db.BoardBean;
-import net.board.db.BoardDAO;
+import net.board.db.BoardDAO_seq;
 
 public class BoardModifyAction implements Action{
 
@@ -20,7 +20,7 @@ public class BoardModifyAction implements Action{
 		//전달받은 파라미터 num 변수에 저장합니다.
 		int num = Integer.parseInt(request.getParameter("BOARD_NUM"));
 		
-		BoardDAO boardDAO = new BoardDAO();
+		BoardDAO_seq boardDAO = new BoardDAO_seq();
 		BoardBean boardData = new BoardBean();
 		
 		//글쓴이 인지 확인하기 위해 저장된 비밀번호와 입력한 비밀번호를 비교합니다.

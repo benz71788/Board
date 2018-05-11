@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.board.db.BoardBean;
-import net.board.db.BoardDAO;
+import net.board.db.BoardDAO_seq;
 
 public class BoardReplyAction implements Action{
 
@@ -19,9 +19,10 @@ public class BoardReplyAction implements Action{
 		request.setCharacterEncoding("UTF-8");
 		
 		ActionForward forward = new ActionForward();
-		BoardDAO boardDAO = new BoardDAO();
+		BoardDAO_seq boardDAO = new BoardDAO_seq();
 		BoardBean boardData = new BoardBean();
 		int result = 0;
+		int num = 0;
 		
 		//파라미터로 넘어온 값들을 boardData 객체에 저장합니다.
 		boardData.setBOARD_NUM(Integer.parseInt(request.getParameter("BOARD_NUM")));
@@ -43,11 +44,12 @@ public class BoardReplyAction implements Action{
 			return null;
 		}
 		
+		num = boardDAO.getListCount();
 		//답변 저장이 제대로 된 경우
 		System.out.println("답장 완료");
 		forward.setRedirect(true);
 		//답변 글 내용을 확인하기 위해 글 내용 보기 페이지를 경로로 설정합니다.
-		forward.setPath("./BoardDetailAction.bo?num=" + result);
+		forward.setPath("./BoardDetailAction.bo?num=" + num);
 		return forward;
 	}
 

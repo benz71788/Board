@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/board/header.jsp" %>
-<link href="css/form.css" rel="stylesheet">
 <form action="./BoardAddAction.bo" method="post"
 	enctype="multipart/form-data" name="boardform">
 	<table>
